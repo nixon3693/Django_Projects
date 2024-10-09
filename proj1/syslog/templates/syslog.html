@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'syslog.css' %}">
+    <title>SYSLOG</title>
+</head>
+<body>
+    <h1 class="header common"><b>Syslog Events</b></h1>
+    <br>
+    <div>
+        <form method="get">
+            {{ syslog_filters.form }}
+            <button type="submit">Search</button>
+        </form>
+        <a href="{% url 'events' %}">Reset</a>
+    </div>
+    <br>
+    <table>
+        <tr>
+            {% for column in syslog_columns %}
+                {% if column != "alert" %}
+                    <th class="th1">
+                        {{ column }}
+                        <!--img src="{% static 'filter_icon.png' %}"
+                             align="right"-->
+                    </th>
+                {% else %}
+                    <th>{{ column }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% for values in syslog_values %}
+            <tr>
+                {% for value in values %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="footer common">@copyright nixon 2023-2024</div>
+</body>
+</html>

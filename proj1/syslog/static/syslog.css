@@ -1,0 +1,42 @@
+.common {
+	width: 100%;
+	text-align: center;
+	background-color: grey;
+}
+
+.header {
+	margin-top: 0;
+	padding-top: 15px;
+	padding-bottom: 15px;
+    height: 50px;
+	font-size: 40px;	
+}
+
+.th1 {
+	width: 10rem;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    padding: 5px;
+    color: white;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+	word-wrap: break-word;
+	border: 1px solid grey;
+}
+
+th {
+	text-transform: capitalize;
+	background-color: #32a852;
+}
